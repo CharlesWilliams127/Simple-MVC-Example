@@ -14,7 +14,6 @@ let lastAdded;
 
 const hostIndex = (req, res) => {
   res.render('index', {
-    currentName: lastAdded.name,
     title: 'Home',
     pageName: 'Home Page',
   });
