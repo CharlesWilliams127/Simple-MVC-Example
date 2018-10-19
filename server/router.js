@@ -12,8 +12,6 @@ const router = (app) => {
   app.get('/*', controllers.notFound);
 
   app.post('/setName', controllers.setName);
-
-  app.post('/updateLast', controllers.updateLast);
 };
 
 // export the router function
