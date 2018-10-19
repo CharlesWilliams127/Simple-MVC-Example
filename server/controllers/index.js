@@ -59,6 +59,19 @@ const hostPage3 = (req, res) => {
   res.render('page3');
 };
 
+const hostPage4 = (req, res) => {
+  const callback = (err, docs) => {
+    if (err) {
+      return res.json({ err }); // if error, return it
+    }
+
+    // return success
+    return res.render('page4', { dogs: docs });
+  };
+
+  readAllDogs(req, res, callback);
+};
+
 const getName = (req, res) => {
   res.json({ name: lastAdded.name });
 };
@@ -122,6 +135,7 @@ module.exports = {
   page1: hostPage1,
   page2: hostPage2,
   page3: hostPage3,
+  page4: hostPage4,
   readDog,
   getName,
   setName,
